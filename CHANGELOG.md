@@ -1,6 +1,11 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.0.6 - 2026-10-22
+### Changed
+- Home: when your licence is active, it shows as a card on the green "Your site is fast" banner (paid until, renews automatically, Check now, Manage subscription) instead of a row in the list. Payment due, ended or offline states still show as a row with a warning. Disconnect is in Advanced → Danger zone.
+
+
 ## 1.0.5 - 2026-10-21
 ### Added
 - Home Dashboard block: Smart Cache status, pages cached, Google speed score and licence at a glance, with a button to open Smart Cache. It is placed at the top of the Home Dashboard on install; move or unpublish it under System → Administrator Modules.
