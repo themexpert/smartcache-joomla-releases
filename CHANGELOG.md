@@ -1,6 +1,14 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.1.1 - 2026-10-22
+### Added
+- Licence: a free trial shows "Free trial until (date), then added to your plan", and a free staging site shows "Free staging site of (your main site)", each with its own label.
+### Fixed
+- A copy of a site (for example a staging site) no longer connects under the original site's address. The connect screen shows which address it will use and offers "Use (this address)" when it differs from the one you are on. A connected site whose address differs from the one in the browser now says so.
+- Add the CDN: the certificate check no longer stops with "Not served … /.well-known/acme-challenge/…". Smart Cache now writes that validation file too (used when Cloudflare issues the certificate through Let's Encrypt or Google).
+
+
 ## 1.1.0 - 2026-10-22
 ### Added
 - An "Add the CDN" step: put Cloudflare in front of your site with one DNS record. Smart Cache shows the exact record for your hostname, checks it, and keeps a certificate ready before you change DNS. It works for www, any subdomain such as dev, and the bare domain (on a DNS host without a bare-domain CNAME, serve visitors on www and Smart Cache forwards the bare domain to it).
