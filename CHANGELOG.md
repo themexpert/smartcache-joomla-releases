@@ -1,6 +1,11 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.1.3 - 2026-10-22
+### Fixed
+- Purge everything with your own Cloudflare account connected now clears only this site's addresses (its hostname and the www or bare twin), not the whole Cloudflare zone. A zone that also serves other sites (subdomains, a shared CDN zone) keeps their caches.
+
+
 ## 1.1.2 - 2026-10-22
 ### Added
 - Download debug log (Advanced → Tools, and on the Connect screen): one file with the versions, the Joomla settings that affect how the site is reached, the licence, Cloudflare and CDN status with the CDN history, the Activity log, the validation files on disk and the end of the error log. Passwords, keys and tokens are removed. Send it to support when something gets stuck.
