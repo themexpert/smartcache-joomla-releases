@@ -1,6 +1,16 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.1.0 - 2026-10-22
+### Added
+- An "Add the CDN" step: put Cloudflare in front of your site with one DNS record. Smart Cache shows the exact record for your hostname, checks it, and keeps a certificate ready before you change DNS. It works for www, any subdomain such as dev, and the bare domain (on a DNS host without a bare-domain CNAME, serve visitors on www and Smart Cache forwards the bare domain to it).
+- Guided Cloudflare for SaaS setup for sites that use their own Cloudflare token, with each step and its result shown as it runs.
+- Cache purges are relayed to the CDN once it is live, so visitors get the new page after you publish.
+- History: every CDN step and every change of its state is written to the Activity log.
+### Notes
+- Nothing changes for a site that has not added the CDN.
+
+
 ## 1.0.6 - 2026-10-22
 ### Changed
 - Home: when your licence is active, it shows as a card on the green "Your site is fast" banner (paid until, renews automatically, Check now, Manage subscription) instead of a row in the list. Payment due, ended or offline states still show as a row with a warning. Disconnect is in Advanced → Danger zone.
