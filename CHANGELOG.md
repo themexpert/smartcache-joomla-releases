@@ -1,6 +1,16 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.1.2 - 2026-10-22
+### Added
+- Download debug log (Advanced → Tools, and on the Connect screen): one file with the versions, the Joomla settings that affect how the site is reached, the licence, Cloudflare and CDN status with the CDN history, the Activity log, the validation files on disk and the end of the error log. Passwords, keys and tokens are removed. Send it to support when something gets stuck.
+### Fixed
+- Desktop layout shift on pages with a bar above the site header (an announcement or marquee section): Smart Cache took that bar for the hero, so the layout CSS of what follows the hero (for example cards pulled up over it) arrived late and the page jumped. A section that ends before the site header is now treated as a top bar. Clear the cache after updating.
+- Cached pages are now sent gzip-compressed when the browser accepts it, like a page Joomla renders itself. Before, a page served from Smart Cache's page cache went out uncompressed (about 6× larger).
+- Images in your own folders that already were WebP (or SVG) kept a plain address and were cached by browsers for only a week. They now get a version in the address, so browsers keep them for a year, and a replaced file gets a new address the next time the page is built.
+- A logo or icon shown much smaller than 480px (for example a 135px header logo) now also gets a version at twice its shown width, instead of downloading a 480px file.
+
+
 ## 1.1.1 - 2026-10-22
 ### Added
 - Licence: a free trial shows "Free trial until (date), then added to your plan", and a free staging site shows "Free staging site of (your main site)", each with its own label.
