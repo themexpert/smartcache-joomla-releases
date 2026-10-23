@@ -1,6 +1,14 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.2.1 - 2026-10-23
+### Fixed
+- Another page cache on the site (JotCache, LiteSpeed Cache, JCH Optimize's page cache or Server Cache) now shows on the Home tab as a setup step instead of "All set": Smart Cache doesn't cache pages while one is on. Finish setup switches it off for you, as it already did for Joomla's own page cache. Before, Home could say "Your site is fast" while pages were built every time.
+### Changed
+- The Settings tab is now called Fine-tune and sits after History: Home, Speed and History are the everyday tabs; Fine-tune and Advanced are optional, since Smart Cache picks the settings itself.
+- Once the CDN is live, the "Add the CDN" card leaves the Home tab. Home shows one "CDN: Live since …" line instead; the card with the undo record and its history stays under Advanced.
+
+
 ## 1.2.0 - 2026-10-23
 ### Added
 - Exclusions from other cache and speed plugins are imported when Smart Cache is installed or updated: JCH Optimize (JS/CSS exclusions, critical scripts, excluded URLs and menu items, its page cache's excluded URLs, menu items and components), Joomla's System - Page Cache, JotCache, LiteSpeed Cache, Server Cache and Cache Exclude. A plugin that is disabled but still holds settings counts too. The install message lists what was added and what could not be (lazy-load exclusions, real regular expressions). Lines you remove later stay removed until that plugin's settings change.
