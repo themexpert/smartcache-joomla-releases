@@ -1,6 +1,17 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.2.2 - 2026-10-23
+### Added
+- Keep pages warm: a new scheduled task (every hour, created on install and update) rebuilds expired and important pages in the background, up to 200 per run and two at a time, so visitors don't wait for a slow first load. Like JCH Optimize's Recache, without a setting.
+- On sites served by Cloudflare (our CDN or your own account), warming also fetches up to 10 of the pages it just cached through Cloudflare, home page first, so the Cloudflare city nearest your server has them before a visitor does.
+### Changed
+- A new screen after installing or updating: one card that says what happened (settings kept, exclusions brought over from other cache plugins, pages served from disk, Cloudflare rules updated) and the one thing to do next, instead of several loose status lines. A site that isn't connected to a plan is told so, with a Connect button. The installer no longer shows the routine "live on the site" check.
+- Clearer package description in Joomla's extension list.
+### Fixed
+- Dark mode in Joomla's administrator: the number tiles, score box, status pills, save bar, Advanced menu and grey help texts were light-only and hard to read on the dark background. They now have dark colours too. The new install card also follows dark mode.
+
+
 ## 1.2.1 - 2026-10-23
 ### Fixed
 - Another page cache on the site (JotCache, LiteSpeed Cache, JCH Optimize's page cache or Server Cache) now shows on the Home tab as a setup step instead of "All set": Smart Cache doesn't cache pages while one is on. Finish setup switches it off for you, as it already did for Joomla's own page cache. Before, Home could say "Your site is fast" while pages were built every time.
