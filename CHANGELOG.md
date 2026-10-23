@@ -1,6 +1,13 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.2.3 - 2026-10-24
+### Changed
+- Speed checks no longer need your own Google API key: a site connected to a Smart Cache plan runs its PageSpeed and real-visitor (Chrome UX Report) checks on Smart Cache's key, so "Google's quota is used up" stops being a daily problem. The Speed tab says the key is included instead of asking for one. Your own key, if you added one, is still used first. A site that isn't connected checks with Google directly, as before.
+### Fixed
+- After Joomla's System → Clear Cache or Regular Labs Cache Cleaner emptied Joomla's cache folder, the Home tab showed "1 step left: Finish setup" again, because they also deleted Smart Cache's small rules file there. Smart Cache now puts it back by itself, so the site stays served straight from disk and Home stays "All set". The same file keeps cached copies from being opened directly, so that protection comes back too.
+
+
 ## 1.2.2 - 2026-10-23
 ### Added
 - Keep pages warm: a new scheduled task (every hour, created on install and update) rebuilds expired and important pages in the background, up to 200 per run and two at a time, so visitors don't wait for a slow first load. Like JCH Optimize's Recache, without a setting.
