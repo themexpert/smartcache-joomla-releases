@@ -1,6 +1,19 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.2.0 - 2026-10-23
+### Added
+- Exclusions from other cache and speed plugins are imported when Smart Cache is installed or updated: JCH Optimize (JS/CSS exclusions, critical scripts, excluded URLs and menu items, its page cache's excluded URLs, menu items and components), Joomla's System - Page Cache, JotCache, LiteSpeed Cache, Server Cache and Cache Exclude. A plugin that is disabled but still holds settings counts too. The install message lists what was added and what could not be (lazy-load exclusions, real regular expressions). Lines you remove later stay removed until that plugin's settings change.
+- Never cache these components (Advanced, Exclusions): component names such as com_rsform, one per line.
+- Extensions can tell Smart Cache not to cache a page through Joomla's own page cache event (onPageCacheIsExcluded), as RSForm Pro does for a page showing a form, J2Commerce for a shopper with a cart, and Quix for an incomplete page.
+- JotCache, LiteSpeed Cache, JCH Optimize's page cache (JCH 8 and 9) and Server Cache are recognised: while one is enabled, Smart Cache pauses its own page cache and says why, as it does for Joomla's page cache.
+### Fixed
+- Shops (VirtueMart, HikaShop, J2Store, Phoca Cart, EShop): a visitor who adds to the cart or opens the cart, wishlist or checkout is no longer served from or stored in any cache for the rest of their browser visit, so one guest's mini-cart can't be shown to everyone. Product and category pages stay cached. HikaShop's cart cookies are recognised directly.
+- Scripts loaded from another site that are not trackers or widgets (for example jQuery, Bootstrap or a payment form from a CDN) are no longer held back until the visitor interacts. Scripts that need them could fail with "jQuery is not defined". Analytics, chat, ads and social widgets are still delayed.
+- Max level: Joomla's core script and jQuery are no longer held back until the visitor interacts. A script that runs on time (for example a mobile menu you excluded) failed with "Joomla is not defined". They are now deferred in order like the site's own scripts.
+- Multilingual sites: the bare home address is never cached, because Joomla's language filter picks each visitor's language there. Language pages (/en/…) stay cached.
+
+
 ## 1.1.3 - 2026-10-22
 ### Fixed
 - Purge everything with your own Cloudflare account connected now clears only this site's addresses (its hostname and the www or bare twin), not the whole Cloudflare zone. A zone that also serves other sites (subdomains, a shared CDN zone) keeps their caches.
