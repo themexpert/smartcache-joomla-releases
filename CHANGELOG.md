@@ -1,6 +1,17 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.2.5 - 2026-10-25
+### Added
+- Add the CDN: a "Check now" button on the live CDN card, and the card says so when your DNS record no longer points to the CDN.
+### Fixed
+- Add the CDN: setup no longer stops with "file not served" on a quiet site. Smart Cache answers Cloudflare's check file itself when the file isn't on disk yet, and checks for it sooner after Start.
+- Add the CDN: forms, payment notifications (for example PayPal IPN) and other posts sent to the bare domain are no longer redirected and lost once the CDN is live. Only normal page visits are sent on to www.
+- Add the CDN: a site whose DNS no longer points to the CDN, or whose www record was deleted, stops sending bare-domain visitors to www within minutes. Changes made meanwhile are still cleared at the CDN, and everything is cleared once when DNS points back.
+- Add the CDN: the live CDN is checked every hour, so the plugin notices when it ends instead of retrying failed purges.
+- A page another extension marks as private (no-store) is no longer cached and made public by Smart Cache. Pages Smart Cache doesn't cache (messages, forms, carts) now also tell Cloudflare not to keep them, whatever other code sends.
+
+
 ## 1.2.4 - 2026-10-24
 ### Added
 - Try before you buy: the Connect screen has a new "Start a 30-day free trial" button. No card needed, every feature included, and nothing is charged when it ends. One trial per site.
