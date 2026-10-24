@@ -1,6 +1,11 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.2.4 - 2026-10-24
+### Added
+- Try before you buy: the Connect screen has a new "Start a 30-day free trial" button. No card needed, every feature included, and nothing is charged when it ends. One trial per site.
+
+
 ## 1.2.3 - 2026-10-24
 ### Changed
 - Speed checks no longer need your own Google API key: a site connected to a Smart Cache plan runs its PageSpeed and real-visitor (Chrome UX Report) checks on Smart Cache's key, so "Google's quota is used up" stops being a daily problem. The Speed tab says the key is included instead of asking for one. Your own key, if you added one, is still used first. A site that isn't connected checks with Google directly, as before.
