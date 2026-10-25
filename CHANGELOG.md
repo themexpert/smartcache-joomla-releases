@@ -1,6 +1,14 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.4.2 - 2026-10-25
+### Added
+- Setup wizard: a few questions after setup (speed level, images, loading images as visitors scroll, outside scripts, fonts), then anything on your site that needs fixing first, each with a fix button. One save, undoable from History. It opens once by itself; run it again any time from Fine-tune.
+- Header videos no longer flash: a video at the top of a page that has no still image now shows its first frame straight away instead of an empty header. Smart Cache makes the still in your browser when you open its dashboard (nothing to install on the server) and makes a new one when the video changes. Switch: Fine-tune → "Still image for header videos".
+### Fixed
+- Pages built with Quix (and other pages with an apostrophe inside an image's description, for example alt='… WA's Strategic Plan') no longer lose the image and the text after it once caching is on.
+
+
 ## 1.4.1 - 2026-10-25
 ### Added
 - Options → Connection → "Use without connecting": turns on every Smart Cache feature without connecting the site to a Smart Cache plan. Smart Cache Edge and speed checks on Smart Cache's Google key still need a connection.
