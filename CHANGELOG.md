@@ -1,6 +1,14 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.4.1 - 2026-10-25
+### Added
+- Options → Connection → "Use without connecting": turns on every Smart Cache feature without connecting the site to a Smart Cache plan. Smart Cache Edge and speed checks on Smart Cache's Google key still need a connection.
+### Fixed
+- Connect and "Start a 30-day free trial" no longer fail with "This site has no key yet. Click Connect again." on busy sites: if another request undid the saved key while you were on the Smart Cache page, it is restored from your login session when you come back.
+- Saving Smart Cache's Options no longer puts back an older copy of the dashboard settings.
+
+
 ## 1.4.0 - 2026-10-25
 ### Added
 - Front door: cached pages are now sent before Joomla even starts, on any server, including nginx, where cached pages had to go through Joomla before. In tests a cached page came back about 3 times faster than through Joomla. It also speeds up links with tracking parameters (`?utm_source=…`) on Apache. It works through a small file, `defines.php`, in your site root, which Smart Cache writes and removes by itself. The Advanced tab says whether it is on.
