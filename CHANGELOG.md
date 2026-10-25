@@ -1,6 +1,17 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.4.0 - 2026-10-25
+### Added
+- Front door: cached pages are now sent before Joomla even starts, on any server, including nginx, where cached pages had to go through Joomla before. In tests a cached page came back about 3 times faster than through Joomla. It also speeds up links with tracking parameters (`?utm_source=…`) on Apache. It works through a small file, `defines.php`, in your site root, which Smart Cache writes and removes by itself. The Advanced tab says whether it is on.
+### Fixed
+- Connect and "Start a 30-day free trial" could fail with "This site has no key yet. Click Connect again." when another Smart Cache request (for example the dashboard still loading) finished during the connect. Settings saved by one request are no longer undone by another.
+### Notes
+- If your site already has its own `defines.php`, Smart Cache leaves it alone and the front door stays off. It also stays off on sites that share one login session between the back end and the site.
+- Security scanners (for example Admin Tools' file change scanner) may report the new `defines.php`. That is expected.
+- Like Smart Cache's other caches and Cloudflare, cached pages are sent before Joomla security extensions (Admin Tools, RSFirewall) run. Visitors they block can still read public pages, but can't log in or send forms.
+
+
 ## 1.3.0 - 2026-10-25
 ### Added
 - Built-in support for popular page builders, template frameworks, event, form and directory extensions: SP Page Builder, Helix Ultimate, Gantry 5, Astroid, JEvents, DPCalendar, iCagenda, ChronoForms, Visforms, SobiPro and BreezingForms. Nothing to set up.
