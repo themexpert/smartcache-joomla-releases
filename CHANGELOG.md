@@ -1,6 +1,23 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.3.0 - 2026-10-25
+### Added
+- Built-in support for popular page builders, template frameworks, event, form and directory extensions: SP Page Builder, Helix Ultimate, Gantry 5, Astroid, JEvents, DPCalendar, iCagenda, ChronoForms, Visforms, SobiPro and BreezingForms. Nothing to set up.
+- Saving a builder page, template style, event, form or directory entry refreshes the pages that show it, including saves these extensions make without telling Joomla.
+- iCagenda: a visitor's registration updates "seats available" on the event page straight away.
+- JEvents calendar, list and event pages are now cached (before, they were always built live). DPCalendar's calendar and list views are cached too.
+- Editors, previews, auto-login links and pages only meant for one visitor (form results, registrations, "thank you" pages) are never cached.
+### Changed
+- Event pages (JEvents, DPCalendar, iCagenda), and pages showing their modules, are refreshed at least every hour, so "upcoming" lists don't fall behind.
+- Astroid: visitors who switched the colour mode always get their own version of the page.
+### Fixed
+- Max level: Helix and Astroid page loaders no longer cover the page while scripts wait. Template menus, sticky headers, page-builder sliders and form validation run on time, after jQuery.
+- Visitors can no longer clear the cache by sending repeated requests to front-end forms or links. Only successful changes by permitted users refresh pages, at most once every 45 seconds per item.
+- An Astroid template save is no longer missed.
+- After an update, new rules for which pages never to cache are applied to `.htaccess` and Cloudflare the next time an admin opens the back end.
+
+
 ## 1.2.5 - 2026-10-25
 ### Added
 - Add the CDN: a "Check now" button on the live CDN card, and the card says so when your DNS record no longer points to the CDN.
