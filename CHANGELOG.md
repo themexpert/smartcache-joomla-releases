@@ -1,6 +1,13 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.4.3 - 2026-10-26
+### Fixed
+- YouTube and Vimeo videos now start on the first click. Smart Cache shows a light preview image until a visitor asks for the video; clicking it loaded the player but paused, so visitors had to click play a second time.
+- System → Clear Cache in Joomla (Delete or Delete All) now also clears the pages Smart Cache keeps, so visitors see your changes straight away. Cache tools that use the same Joomla event (for example Cache Cleaner) clear them too. "Clear Expired Cache" still leaves them alone.
+- Tag pages (and addresses with a list in them, such as `?id[]=3`) no longer write an error to Smart Cache's log on every visit. Visitors saw the page normally.
+
+
 ## 1.4.2 - 2026-10-25
 ### Added
 - Setup wizard: a few questions after setup (speed level, images, loading images as visitors scroll, outside scripts, fonts), then anything on your site that needs fixing first, each with a fix button. One save, undoable from History. It opens once by itself; run it again any time from Fine-tune.
