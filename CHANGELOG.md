@@ -1,6 +1,19 @@
 # Changelog
 
 Changes in each release of Smart Cache for Joomla, newest first.
+## 1.5.0 - 2026-10-28
+### Changed
+- Smart Cache now always works through a connection to speed.themexpert.com, on a free trial or a paid plan. Until the site is connected, Smart Cache does nothing and the site runs as before.
+- The free trial runs for 30 days from the day the site first connects. Smart Cache remembers that day in your site's database, so disconnecting and connecting again doesn't restart it. When the trial ends, Smart Cache switches off on that day, even if the site can't reach speed.themexpert.com, and the site runs as it did before. If you have chosen a plan by then, Smart Cache simply carries on.
+- The dashboard shows when your free trial started and when it ends, and says clearly when it has ended.
+- When you click Connect, Smart Cache tells speed.themexpert.com your email address, your site's mail address and which extra components are installed (not Joomla's own), so we can support you. The daily check-in keeps the component list current. It never sends page content, form entries or anything about your visitors.
+### Fixed
+- Cloudflare: Smart Cache now only changes or removes its own rules for this site. On a Cloudflare zone shared by several sites (subdomains, an agency zone), the "Smart Cache: …" rules of the other sites, and other Smart Cache rules in the zone, are left alone, including on uninstall.
+- Cloudflare: zone-wide settings that can affect other addresses in the zone, such as "Always Use HTTPS", are only recommended and are never changed without your confirmation.
+### Removed
+- Options → Connection → "Use without connecting". A site that used it stops until it is connected.
+
+
 ## 1.4.3 - 2026-10-26
 ### Fixed
 - YouTube and Vimeo videos now start on the first click. Smart Cache shows a light preview image until a visitor asks for the video; clicking it loaded the player but paused, so visitors had to click play a second time.
